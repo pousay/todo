@@ -1,0 +1,449 @@
+/*Font*/
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+/*Variables*/
+:root {
+  --main-task-color: #02bebb;
+  --main-color-all: #1b5dcf;
+  --main-color-alpha: #db2a2a;
+  --main-padding: 10px;
+  --main-border-radius: 10px;
+  --main-text-color: #fff;
+  --main-background-color: #212121;
+  --main-nav-color: #181818;
+}
+/*HTML*/
+html {
+  font-size: 16px;
+}
+/*All*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*Body*/
+body.light {
+  --main-text-color: rgb(19, 19, 19);
+  --main-background-color: #f5f5f5;
+  --main-nav-color: #ffffff;
+}
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+}
+/*Selection*/
+::-moz-selection {
+  background-color: var(--main-text-color);
+  color: var(--main-background-color);
+}
+::selection {
+  background-color: var(--main-text-color);
+  color: var(--main-background-color);
+}
+/*Scrollbar*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--main-background-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-task-color);
+  border-radius: var(--main-border-radius);
+}
+::-webkit-scrollbar-corner {
+  background-color: var(--main-background-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+.title {
+  cursor: pointer;
+  color: var(--main-text-color) !important;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  box-shadow: 0px 0px 10px 1px #4f4f4f;
+  background-color: var(--main-nav-color);
+  margin: 0 !important;
+  padding: 0 10px !important;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  top: 0;
+}
+nav .fa-bars {
+  scale: 1.8;
+  margin-right: 8px;
+  padding: 5px;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-back {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5px 10px;
+  font-size: 25px;
+  margin-top: -5px;
+  cursor: pointer;
+}
+.nav-items {
+  transition: 0.3s ease;
+  width: 0px;
+  padding: 20px;
+  background-color: var(--main-background-color);
+  height: 100%;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  opacity: 0;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-items.shown {
+  width: 180px !important;
+  z-index: 10000 !important;
+  opacity: 1 !important;
+}
+
+.nav-items a {
+  color: var(--main-text-color);
+  opacity: 0.8;
+  cursor: pointer;
+  padding: 0 85px 0 0;
+  margin-top: 15px !important;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.nav-items a:hover {
+  opacity: 1;
+}
+
+.nav-items a.selected,
+.nav-md-items a.selected {
+  color: var(--main-color-all);
+}
+
+.nav-items a.selected:hover,
+.nav-md-items a.selected:hover {
+  color: var(--main-color-all);
+}
+
+.nav-md-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-right: 10px;
+}
+
+.nav-md-items a {
+  cursor: pointer;
+  color: var(--main-text-color);
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+.nav-md-items a:hover {
+  opacity: 1;
+}
+
+/*Start ToDo List*/
+main .to-do-list {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  position: relative;
+  padding: calc(var(--main-padding) * 2);
+  margin: auto;
+  margin-top: 60px !important;
+}
+
+.title {
+  text-transform: capitalize !important;
+  text-align: center !important;
+  font-size: 1.5rem !important;
+}
+main .to-do-list .content-image {
+  margin: 20px 0;
+  width: 100%;
+  height: 230px;
+  border-radius: var(--main-border-radius);
+  background-image: url("images/todo5.jpg");
+  background-size: cover;
+  background-position: center;
+}
+main .to-do-list .content-act {
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+main .to-do-list .content-act .status {
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  justify-content: space-between !important;
+  width: 100%;
+}
+
+main .to-do-list .content-act .status span {
+  padding: 8px calc(var(--main-padding) / 2) 0;
+  border-radius: var(--main-border-radius);
+  font-size: 1rem;
+  background-color: var(--main-color-all);
+  width: 100%;
+  text-align: center;
+}
+
+.del {
+  background-color: var(--main-task-color);
+  position: absolute !important;
+  right: 25px !important;
+  width: fit-content !important;
+}
+main .to-do-list .content-act .status span:last-child i {
+  padding-top: 5px;
+  font-size: 1.2rem;
+}
+span.del {
+  width: 50px;
+  height: 50px;
+  padding: calc(var(--main-padding) + (var(--main-padding) / 2));
+  border-radius: 50%;
+  text-align: center;
+}
+main .to-do-list .add-task,
+main .to-do-list .tasks .task {
+  margin: 10px 0;
+  background-color: var(--main-task-color);
+  border-radius: var(--main-border-radius);
+}
+main .to-do-list .add-task {
+  padding: calc(var(--main-padding) / 2);
+}
+main .to-do-list .tasks .task {
+  padding: var(--main-padding);
+}
+main .to-do-list .add-task input {
+  width: 80%;
+  padding: calc(var(--main-padding) + (var(--main-padding) / 2));
+  border: none;
+  outline: none;
+  background-color: var(--main-task-color);
+  color: var(--main-text-color);
+  font-size: 1.2rem;
+}
+main .to-do-list .add-task input::placeholder {
+  color: #c8c8c8;
+}
+main .to-do-list .add-task span {
+  padding: calc(var(--main-padding) + 2px) calc(var(--main-padding) * 2);
+  float: right;
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-background-color);
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+main .to-do-list .add-task span i {
+  text-align: center;
+}
+main .to-do-list .tasks .task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+main .to-do-list .tasks .task .cont-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+main .to-do-list .tasks .task .cont-1 i {
+  margin: 0 10px 0 20px;
+  cursor: pointer;
+}
+main .to-do-list .tasks .task .cont-1 i.cirl {
+  background-color: white;
+  border-radius: 50%;
+}
+main .to-do-list .tasks .task .cont-1 p {
+  font-size: 1.2rem;
+  color: var(--main-text-color);
+}
+main .to-do-list .tasks .task .cont-2 i {
+  cursor: pointer;
+  color: rgb(255, 0, 47);
+}
+
+.each-task-cont {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  gap: 15px;
+}
+
+.each-task-cont .fa-pencil {
+  color: rgb(0, 229, 0);
+  scale: 1.2;
+  cursor: pointer;
+}
+
+i {
+  font-size: 1.5rem;
+}
+main .to-do-list .no-tasks {
+  width: 100%;
+  background-color: var(--main-color-alpha);
+  border-radius: var(--main-border-radius);
+  padding: var(--main-padding);
+  text-align: center;
+}
+main .to-do-list .no-tasks p {
+  font-size: 1.1rem;
+}
+main .to-do-list .no-tasks p i {
+  font-size: 1rem;
+}
+.completed {
+  text-decoration: line-through;
+}
+/*Media Query*/
+@media (max-width: 767px) {
+  main .to-do-list {
+    width: 100% !important;
+    padding: 0 15px !important;
+  }
+  main .to-do-list .content-act {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .nav-md-items {
+    display: none !important;
+  }
+
+  .del {
+    right: 20px !important;
+  }
+
+  .fa-bars {
+    display: flex !important;
+  }
+}
+@media (max-width: 1200px) {
+  main .to-do-list {
+    width: 70%;
+  }
+}
+/*End ToDa List*/
+
+/* settings */
+.settings {
+  margin: 130px 0 0;
+  padding: 0 20px;
+}
+
+.set-each {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.set-each p {
+  margin: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 15px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #c8c8c8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 14px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+  left: 0px;
+  bottom: -5px;
+  background-color: var(--main-task-color);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.switch.done input + .slider {
+  background-color: var(--main-color-all);
+}
+
+.switch.done input + .slider:before {
+  transform: translateX(15px);
+}
+
+.change-input {
+  outline: none !important;
+  border: none !important;
+  background-color: var(--main-background-color);
+  padding: 5px;
+  color: white;
+}
+
+body.light .change-input {
+  color: black !important;
+}
+
+.change-button {
+  outline: none !important;
+  border: none !important;
+  background-color: var(--main-task-color) !important;
+}
