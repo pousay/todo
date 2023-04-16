@@ -10,7 +10,7 @@ function Info() {
       <main className="pe-5 ps-4">
         <h5 className="mt-5 pt-5">
           <code>To Do List </code>
-          is an open-source project. This app focuses on the ease of use of a
+          is an open-source project. This app is focused on the ease of use of a
           Todo App. Write your todos, change some settings, Share with friends,
           Enjoy!
         </h5>
