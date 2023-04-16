@@ -1,7 +1,5 @@
 export default function SaveTodos(todos: []) {
-  if (todos?.length > 0) {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 export function fetchTodos(): any {
@@ -11,4 +9,12 @@ export function fetchTodos(): any {
   } else {
     return [];
   }
+}
+
+export function saveSettings(): any {
+  /* in next version */
+}
+
+export function fetchSettings(): any {
+  /* in next version */
 }

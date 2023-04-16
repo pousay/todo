@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { SettingContext } from "../globalComponents/Context";
-import Navbar from "../globalComponents/Navbar";
+import { SettingContext } from "../../globalComponents/Context";
+import Navbar from "../../globalComponents/Navbar";
 
 function Setting() {
   const { settings, setSettings } = useContext(SettingContext);

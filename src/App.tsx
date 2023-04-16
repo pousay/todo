@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import Setting from "./settings/setting";
-import Todos from "./mainpage/Todos";
-import Info from "./info/info";
+import Setting from "./pages/settings/setting";
+import Todos from "./pages/mainpage/Todos";
+import Info from "./pages/info/info";
 import {
   settingContextType,
   SettingContext,

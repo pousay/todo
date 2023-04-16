@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { SettingContext } from "../globalComponents/Context";
-import Cases from "../reducer/Cases";
+import { SettingContext } from "../../globalComponents/Context";
+import Cases from "../../reducer/Cases";
 import { playAudio } from "./Todos";
 
 interface onHideProps {

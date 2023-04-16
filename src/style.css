@@ -447,3 +447,7 @@ body.light .change-input {
   border: none !important;
   background-color: var(--main-task-color) !important;
 }
+
+code {
+  color: var(--main-color-all) !important;
+}

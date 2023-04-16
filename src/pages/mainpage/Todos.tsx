@@ -1,10 +1,10 @@
 import { useContext, useEffect, useReducer, useRef, useState } from "react";
-import SaveTodos, { fetchTodos } from "../globalComponents/LsSaver";
+import SaveTodos, { fetchTodos } from "../../globalComponents/LsSaver";
 import EditTaskModal from "./modal";
-import Navbar from "../globalComponents/Navbar";
-import Cases from "../reducer/Cases";
-import { initState, reducer } from "../reducer/reducer";
-import { SettingContext } from "../globalComponents/Context";
+import Navbar from "../../globalComponents/Navbar";
+import Cases from "../../reducer/Cases";
+import { initState, reducer } from "../../reducer/reducer";
+import { SettingContext } from "../../globalComponents/Context";
 export const playAudio = (audio: any, access: boolean) => {
   if (access) {
     audio.play();
