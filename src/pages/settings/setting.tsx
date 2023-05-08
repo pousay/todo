@@ -31,7 +31,7 @@ function Setting() {
       <Navbar what={2} />
       <main className="settings">
         <div className="set-each">
-          <p>Dark Mode :</p>
+          <p>حالت شب :</p>
           <label
             className={settings.theme === "dark" ? "switch done" : "switch"}
           >
@@ -40,7 +40,7 @@ function Setting() {
           </label>
         </div>
         <div className="set-each">
-          <p>Sounds :</p>
+          <p>صدا ها :</p>
           <label className={settings.sounds ? "switch done" : "switch"}>
             <input
               type="checkbox"
@@ -52,7 +52,7 @@ function Setting() {
           </label>
         </div>
         <div className="set-each">
-          <p>Delete On Done :</p>
+          <p>حذف بر روی انجام شدن :</p>
           <label className={settings.deleteOnDone ? "switch done" : "switch"}>
             <input
               type="checkbox"

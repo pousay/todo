@@ -31,7 +31,7 @@ const EditTaskModal: React.FC<onHideProps> = ({
       )[0];
       setValue(selectedTask.task);
     }
-  }, [TaskID]);
+  }, [TaskID, state.todos]);
 
   const EditTask = (Id: number) => {
     dispatch({ type: Cases.EditTodo, id: Id, NewTaskValue: Value });
@@ -68,7 +68,7 @@ const EditTaskModal: React.FC<onHideProps> = ({
               playAudio(audio.current, settings.sounds);
             }}
           >
-            Save
+            ذخیره
           </Button>
         </Modal.Footer>
       </Modal>

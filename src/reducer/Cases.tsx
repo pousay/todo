@@ -14,4 +14,11 @@ const Cases: {
   EditTodo: "edit-todo",
 };
 
+export const soundCases: {
+  add: string;
+  remove: string;
+} = {
+  add: "add",
+  remove: "remove",
+};
 export default Cases;

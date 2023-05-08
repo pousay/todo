@@ -9,28 +9,30 @@ function Info() {
       <Navbar what={3} />
       <main className="pe-5 ps-4">
         <h5 className="mt-5 pt-5">
-          <code>To Do List </code>
-          is an open-source project. This app is focused on the ease of use of a
-          Todo App. Write your todos, change some settings, Share with friends,
-          Enjoy!
+          لیست وظایف یک پروژه متن باز است. این برنامه بر سهولت استفاده از یک
+          برنامه انجام وظایف متمرکز شده است. کارهای خود را بنویسید، برخی تنظیمات
+          را تغییر دهید، با دوستان خود به اشتراک بگذارید، لذت ببرید!
         </h5>
 
-        <h4 className="mt-5 pt-4">Contact : </h4>
+        <h4 className="mt-5 pt-4">ارتباط : </h4>
         <div className="d-flex gap-3 mt-4">
           <a href="https://t.me/Better_ring_fring">
             <img
+              alt="تلگرام"
               style={{ height: "40px" }}
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png?20220101141644"
             />
           </a>
           <a href="https://discordapp.com/users/837373420764790856">
             <img
+              alt="دیسکورد"
               style={{ height: "40px" }}
               src="https://skillicons.dev/icons?i=discord"
             />
           </a>
           <a href="https://www.instagram.com/pourya_the_g/">
             <img
+              alt="اینستاگرام"
               style={{ height: "40px" }}
               src="https://skillicons.dev/icons?i=instagram"
             />

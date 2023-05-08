@@ -5,8 +5,11 @@ import Navbar from "../../globalComponents/Navbar";
 import Cases from "../../reducer/Cases";
 import { initState, reducer } from "../../reducer/reducer";
 import { SettingContext } from "../../globalComponents/Context";
+
 export const playAudio = (audio: any, access: boolean) => {
   if (access) {
+    console.log(audio);
+
     audio.play();
   }
 };
@@ -42,7 +45,7 @@ function Todos() {
             onClick={() => {
               dispatch({ type: Cases.DoneUnDone, payload: todo.id });
               if (settings.deleteOnDone && !todo.isDone) {
-                playAudio(removeAudio.current, true);
+                playAudio(removeAudio.current, settings.sounds);
               }
             }}
           ></i>
@@ -104,9 +107,9 @@ function Todos() {
           <div className="content-image"></div>
           <div className="content-act">
             <div className="status">
-              <span>Tasks : {state?.todos.length}</span>
+              <span>وظایف : {state?.todos.length}</span>
               <span>
-                Completed :{" "}
+                انجام شده ها :{" "}
                 {state?.todos.filter((todo: any) => todo.isDone).length}
               </span>
             </div>
@@ -127,7 +130,7 @@ function Todos() {
                 setValue(e.target.value);
               }}
               type="text"
-              placeholder="Add Your Task"
+              placeholder="وظیفه را وارد کنید..."
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   Addtask();
@@ -141,7 +144,8 @@ function Todos() {
           {state?.todos.length <= 0 && (
             <div className="no-tasks pb-0">
               <p>
-                <i className="fa-regular fa-circle-xmark"></i> No Tasks To Show
+                <i className="fa-regular fa-circle-xmark"></i> وظیفه ای ثبت
+                نشده!
               </p>
             </div>
           )}
@@ -152,15 +156,11 @@ function Todos() {
         {/* Audio Sounds  */}
         <audio
           ref={addAudio}
-          src="./audios/addt.wav"
-          preload="auto"
-          id="addAud"
+          src="https://storage.cloudconvert.com/tasks/59919726-39f9-46b3-8aa4-dd9a9708a0ba/addt.mp3?AWSAccessKeyId=cloudconvert-production&Expires=1683636836&Signature=ffGUJ%2B%2BS3gIR7IRr9HFG24CbjgU%3D&response-content-disposition=attachment%3B%20filename%3D%22addt.mp3%22&response-content-type=audio%2Fmpeg"
         ></audio>
         <audio
           ref={removeAudio}
-          src="./audios/remove.wav"
-          preload="auto"
-          id="removeAud"
+          src="https://storage.cloudconvert.com/tasks/3a3cdb97-5dfe-490b-8f9c-fe86804636e6/remove.mp3?AWSAccessKeyId=cloudconvert-production&Expires=1683636837&Signature=1iF2HFGNmp0tah9bthN%2BkEaXafw%3D&response-content-disposition=attachment%3B%20filename%3D%22remove.mp3%22&response-content-type=audio%2Fmpeg"
         ></audio>
       </main>
     </>

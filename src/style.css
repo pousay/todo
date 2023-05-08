@@ -218,7 +218,7 @@ main .to-do-list .content-act .status span {
 .del {
   background-color: var(--main-task-color);
   position: absolute !important;
-  right: 25px !important;
+  left: 25px !important;
   width: fit-content !important;
 }
 main .to-do-list .content-act .status span:last-child i {
@@ -354,7 +354,7 @@ main .to-do-list .no-tasks p i {
   }
 
   .del {
-    right: 20px !important;
+    left: 20px !important;
   }
 
   .fa-bars {
