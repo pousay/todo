@@ -1,6 +1,6 @@
 import Cases from "./Cases";
 
-interface Todo {
+export interface Todo {
   id: number;
   task: string;
   isDone: boolean;
@@ -70,13 +70,13 @@ export const reducer = (state: any, action: any) => {
       break;
   }
 };
-
-export const initState: {
+export interface initStateType {
   todos: Todo[];
   theme: "dark" | "light";
   DeleteOnDone: boolean;
   Sounds: boolean;
-} = {
+}
+export const initState: initStateType = {
   todos: [],
   theme: "dark",
   DeleteOnDone: false,

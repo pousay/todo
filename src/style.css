@@ -451,3 +451,26 @@ body.light .change-input {
 code {
   color: var(--main-color-all) !important;
 }
+
+.selectTasks {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  text-align: center;
+  margin: 0 auto 10px;
+}
+.selectTasks button {
+  color: white;
+  background-color: var(--main-color-all) !important;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  opacity: 0.6;
+  box-shadow: 1px 1px 6px 0.1px rgb(93, 93, 93);
+}
+
+.selectTasks button.selected {
+  opacity: 1;
+  box-shadow: none;
+}
